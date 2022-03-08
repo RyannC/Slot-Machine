@@ -1,0 +1,40 @@
+import random
+value1 = random.randint(0,2)
+value2 = random.randint(0,2)
+value3 = random.randint(0,2) 
+value4 = random.randint(0,2) 
+value5 = random.randint(0,2) 
+value6 = random.randint(0,2) 
+
+
+def slotmachine(value1,value2,value3,value4,value5,value6): 
+   number_list = (value1,value2, value3, value4,value5,value6)
+   print(number_list)
+   if value1 == value1 and value2 == value1 and value3 == value1 and value4 == value1 and value5 == value1 and value6 == value1:
+        return('JACKPOT!') 
+   else: 
+        return('LOSER. LOSER. LOSER.')
+
+ye = 1
+def repeater(ye):  
+    tokens = 3
+    retry = 0 
+    while tokens <= 3 and retry != 2: 
+        enter = input('Please enter one to play. Do that by typing 1')
+        enter = int(enter)
+        tokens = tokens - enter
+        print('you have entered 1 token')
+        print(1)
+        print('you have this many tokens:',tokens)
+        print(slotmachine(value1,value2,value3,value4,value5,value6)) 
+        retry = input('Would you like to again if so then type 1 if not type 2 to leave')
+        retry = int(retry)  
+        if retry == 1:
+            print('ok')
+        if retry == 2: 
+            print('game over')
+        if tokens == 0:
+            break
+        print('game over you ran out of tokens and are likely in debt')
+
+repeater(ye)
